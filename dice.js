@@ -5,16 +5,19 @@ let tieCount = 0
 for (let i = 1; i <= 10; i++) {
   let tigerPoint = Math.floor(Math.random() * 6) + 1
   let bearPoint = Math.floor(Math.random() * 6) + 1
+  let result = ''
+
   if (tigerPoint > bearPoint) {
     tigerWinCount++
-    console.log(`第${i}局|虎哥${tigerPoint}點 vs 熊弟${bearPoint}點| 本局虎哥勝`)
+    result = '本局虎哥勝'
   } else if (bearPoint > tigerPoint) {
     bearWinCount++
-    console.log(`第${i}局|虎哥${tigerPoint}點 vs 熊弟${bearPoint}點| 本局熊弟勝`)
+    result = '本局熊弟勝'
   } else {
     tieCount++
-    console.log(`第${i}局|虎哥${tigerPoint}點 vs 熊弟${bearPoint}點| 本局平局`)
+    result = '本局平局'
   }
+  console.log(`第${i}局|虎哥${tigerPoint}點 vs 熊弟${bearPoint}點|${result}`)
 }
 
 console.log('--- 結果 ---')
@@ -25,5 +28,5 @@ if (tigerWinCount > bearWinCount) {
 } else if (bearWinCount > tigerWinCount) {
   console.log('最終冠軍：熊弟')
 } else {
-  console.log('平局')
+  console.log('最終結果：平局')
 }
